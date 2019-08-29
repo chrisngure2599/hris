@@ -2,7 +2,7 @@
 session_start();
 include_once 'connect.php';
 include_once 'check.php';
-print_r($_SESSION);
+include_once 'nav.php';
 ?>
 <div class="">
        <p>

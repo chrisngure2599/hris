@@ -14,11 +14,9 @@
 <!-- Your custom styles (optional) -->
 <link href="../css/style.min.css" rel="stylesheet">
 <link href="../css/style.css" rel="stylesheet">
-<div class="w3-bar w3-container  w3-blue w3-padding">
-  <a href="index.php" class="w3-bar-item w3-button w3-green w3-padding">Home</a>
-  <a href="addhouse.php" class="w3-bar-item w3-button w3-green w3-padding">add houses</a>
-  <a href="bookedhouse.php" class="w3-bar-item w3-button w3-green w3-padding">Booked house</a>
-  <a href="viewhouses.php" class="w3-bar-item w3-button w3-green w3-padding">View houses</a> 
-  <a href="../Logout.php" class="w3-bar-item w3-right w3-button w3-green w3-padding">Logout</a> 
-
+<div class="w3-bar w3-border w3-green w3-padding">
+  <a href="Index.php" class="w3-bar-item w3-button w3-padding-16">Home</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-16">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-16">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-16">Link 3</a>
 </div>

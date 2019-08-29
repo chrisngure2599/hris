@@ -1,9 +1,11 @@
 
-    <div class="tab-pane fade p-3" id="contact-classic-shadow" role="tabpanel" aria-labelledby="contact-tab-classic-shadow">
+    <div class="">
       <?php 
    include 'connect.php';
-$results = mysqli_query($db, "SELECT * FROM booking WHERE owner_id=$user_id"); ?>
-    
+   include_once 'check.php';
+   include_once 'nav.php';
+   $user_id=$_SESSION['user_id'];
+$results = mysqli_query($db, "SELECT * FROM booking WHERE owner_id=$user_id"); ?>  
 	 
               <!-- Editable table -->
 <div class="card">

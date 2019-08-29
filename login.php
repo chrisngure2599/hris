@@ -51,7 +51,7 @@ if (isset($_POST['login'])) {
             $_SESSION['lastname'] = $data['lastname'];
             $_SESSION['country'] = $data['country'];
             $_SESSION['role'] = $data['type'];
-            header("location:tenants.php");
+            header("location:tenants/index.php");
             }elseif ("Landlord"==$data['type']) {
               session_start();
                  $_SESSION['username'] = $username;
