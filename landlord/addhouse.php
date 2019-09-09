@@ -113,8 +113,7 @@
   	</div>
       <div class="input-group">
   	  <label>Choose image</label>
-<!--          <input type="file" class="form-control-file" name="image" placeholder=""/>-->
-          <input type="file" class="form-control-file" name="image" multiple >
+          <input type="file" class="form-control-file" name="image">
   	</div>
     
   	<div class="input-group">
