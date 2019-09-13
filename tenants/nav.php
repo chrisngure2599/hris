@@ -16,7 +16,8 @@
 <link href="../css/style.css" rel="stylesheet">
 <div class="w3-bar w3-border w3-green w3-padding">
   <a href="Index.php" class="w3-bar-item w3-button w3-padding-16">Home</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-16">Link 1</a>
+  <a href="my_bookings.php" class="w3-bar-item w3-button w3-padding-16">My bookings</a>
+  <a href="my_accepted.php" class="w3-bar-item w3-button w3-padding-16">My accepted</a>
   <a href="#" class="w3-bar-item w3-button w3-padding-16">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-16">Link 3</a>
+  <a href="../logout.php" class="w3-right w3-bar-item w3-button">Logout</a>
 </div>

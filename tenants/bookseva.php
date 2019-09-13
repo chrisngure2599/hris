@@ -2,7 +2,7 @@
 
 if (isset($_POST['booknow'])) {
     include 'connect.php';
-    $house_type = mysqli_real_escape_string($db, $_POST['house_type']);
+    include 'sec.php';
      $client_name= mysqli_real_escape_string($db, $_POST['client_name']);
      $from_date= mysqli_real_escape_string($db, $_POST['from_date']);
      $to_date = mysqli_real_escape_string($db, $_POST['to_date']);
@@ -16,8 +16,8 @@ if (isset($_POST['booknow'])) {
 //        $query="insert into booking values ('',
 //            '$house_type','$client_name','$from_date','$cost','$owner_id','$house_id'
 //            '$to_date',Now())";
-        $query1="INSERT INTO `booking` (`id`, `house_id`, `cutomer_id`, `owner_id`, `booked_date`, `from_date`, `to_date`, `house_type`, `client_name`, `cost`) "
-                . "VALUES (NULL, '$house_id', '$customer_id', '$owner_id', CURRENT_TIMESTAMP, '$from_date', '$to_date', '$house_type', '$client_name', '$cost');";
+        $query1="INSERT INTO `booking` (`id`, `house_id`, `cutomer_id`, `owner_id`, `booked_date`, `from_date`, `to_date`,`client_name`, `cost`) "
+                . "VALUES (NULL, '$house_id', '$customer_id', '$owner_id', CURRENT_TIMESTAMP, '$from_date', '$to_date', '$client_name', '$cost');";
         //execute query
         $result=mysqli_query($db, $query1);
         if ($result) {

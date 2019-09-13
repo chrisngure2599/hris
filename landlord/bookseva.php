@@ -2,6 +2,8 @@
 
 if (isset($_POST['booknow'])) {
     include 'connect.php';
+  include_once 'check.php';
+
     $house_type = mysqli_real_escape_string($db, $_POST['house_type']);
      $client_name= mysqli_real_escape_string($db, $_POST['client_name']);
      $from_date= mysqli_real_escape_string($db, $_POST['from_date']);

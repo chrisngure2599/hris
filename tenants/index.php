@@ -2,6 +2,8 @@
 include_once '../connect.php';
 //include_once '../connect.php';
 include_once 'nav.php';
+    include 'sec.php';
+
  ?>
                        <?php 
                     

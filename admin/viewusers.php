@@ -1,7 +1,7 @@
 <?php
 session_start();
  include '../connect.php';
-
+include_once 'check.php';
 $user_id = $_SESSION['user_id'];
 if(!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])){
     header('Location: rental.php');

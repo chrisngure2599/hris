@@ -4,4 +4,5 @@ error_reporting(0);
 $db=mysqli_connect("localhost", "root", "sziff124", "rental_house") or 
     die("cannot connect");
      session_start();
+     
 ?>

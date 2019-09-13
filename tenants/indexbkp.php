@@ -1,6 +1,8 @@
 <?php
 include '../connect.php';
 include '../includes/head.php';
+include 'sec.php';
+
  $user_id = $_SESSION['user_id'];
  $user_country = $_SESSION['country'];
  ?>

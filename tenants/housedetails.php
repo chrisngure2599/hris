@@ -2,6 +2,8 @@
  include_once '../connect.php';
  include_once 'nav.php'; 
   include('bookseva.php');
+    include 'sec.php';
+  
   ?>
     
 <body>
@@ -50,23 +52,9 @@ if (isset($_GET['id'])) {
     <li><b>minimum cost is:</b> <?php echo $row['price_per_time']; ?></li>
     <li><b>Payment type:</b><?php echo $row['time_type']; ?></li>
     </ul>  
-
-    <form method="post" >
-      <fieldset>
-      <legend class="w3-grey w3-border" >Book now</legend>     
-      <div class="form-group w3-row-padding " >
-        <div class="w3-half" >
-          <label>Start date</label>
-          <?php echo date('m/d/Y')?>
-        <input type="date" class="w3-input w3-border w3-margin w3-padding" 
-        name="from_date" min="<?php echo date('m-d-Y'); ?>" >
-       </div>
-       <div class="w3-half" >
-       <label>End date</label> <input type="date" class="w3-input w3-border w3-margin w3-padding" name="to_date"></div>
-      </div> 
-      <input type="submit" class="w3-btn btn-primary w3-round btn-sm mb-2" name="booknow">
-    </fieldset>
-    </form>
+        <button type="button" class="btn btn-grey1" data-toggle="modal" data-target="#modalSubscriptionForm"> 
+           <i class="fas fa-book-medical black-text"></i>Book</button>
+   
     </div>
     <!--@ End of description-->
   
@@ -82,4 +70,64 @@ if (isset($_GET['id'])) {
  ?>
    
 </body>
+<!--Start of the model-->
+ <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+        
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Book House</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        
+       <form  action="" method="POST">
+           
+      <div class="modal-body mx-3">
+           <?php 
+           
+           $results = mysqli_query($db, "SELECT * FROM house where id =".$_GET['id']);
+          while ($row = mysqli_fetch_array($results)) { 
+            ?>
+            <label for="defaultFormNameModalEx">client name</label>
+            <input readonly="" type="text" id="defaultFormNameModalEx" class="form-control form-control-sm" name="client_name" value="<?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?>">
+            <br>
+            <div class="form-row">
+            <div class="form-group col-md-6">
+      <label for="inputFrom">From</label>
+      <input type="date" value="" class="form-control" id="inputCity" name="from_date">
+    </div>
+    <!-- Default input -->
+    <div class="form-group col-md-6">
+      <label for="to">To</label>
+      <input type="date" class="form-control" id="input"  name="to_date">
+    </div>
+  </div>
+            <br>
+            <label for="defaultFormNameModalEx">Cost</label>
+            <input type="text" id="defaultFormNameModalEx" class="form-control form-control-sm" name="cost" value="<?php echo $row['price_per_time']; ?>">
+             <br>
+<!--            <label for="defaultFormNameModalEx">total days</label>
+            <input type="text" id="defaultFormNameModalEx" class="form-control form-control-sm">-->
+            <input type="hidden" id="defaultFormNameModalEx" class="form-control form-control-sm" name="house_id" value="<?php echo $row['id']; ?>">
+            <input type="hidden" id="defaultFormNameModalEx" class="form-control form-control-sm" name="owner_id" value="<?php echo $row['user_id']; ?>">
+            <input type="hidden" id="defaultFormNameModalEx" class="form-control form-control-sm" name="cutomer_id" value="<?php echo $_SESSION['user_id']; ?>">
+       <?php }; ?>       
+   </div>   
+                 
+            
+ <div class="input-group">
+     <button class="btn btn-grey1 center" type="submit" name="booknow">Book <i class="fas fa-paper-plane-o ml-1"></i></button>
+  
+ </div>
+           
+       </form>
+      
+      
+ 
+ </div>
+      </div>
+<!--End of the model-->
 </html>     

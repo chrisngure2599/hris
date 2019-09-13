@@ -1,6 +1,7 @@
 <?php
 ob_start();
 include 'connect.php';
+include_once 'check.php';
 $id = $_GET ['id'];
 $query="select * from house where id ='$id'";
 $result=mysqli_query($db,$query);

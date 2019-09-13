@@ -4,6 +4,7 @@
    include 'connect.php';
    include_once 'check.php';
    include_once 'nav.php';
+
    $user_id=$_SESSION['user_id'];
 $results = mysqli_query($db, "SELECT * FROM booking WHERE owner_id=$user_id"); ?>  
 	 

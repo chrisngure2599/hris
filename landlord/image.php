@@ -4,6 +4,9 @@ $errors = array();
 
 // connect to the database
 include 'connect.php';
+include_once 'check.php';
+
+
 
 // REGISTER HOUSE
 if (isset($_POST['add'])) {
